@@ -10,8 +10,8 @@ const tradutor = _translate.plugins.owner_actualizacion
 let previousCommitSHA = '';
 let previousUpdatedAt = '';
 let previousCommitUser = ''; 
-const owner = 'BrunoSobrino';
-const repo = 'TheMystic-Bot-MD';
+const owner = 'Dazai';
+const repo = 'Dazai-Bot-MD';
 const handler = async (m, {conn, text, usedPrefix, command}) => {
  conn.sendMessage(m.chat, {text: tradutor.texto1}, {quoted: m});  
 try {
