@@ -1534,16 +1534,16 @@ let date = d.toLocaleDateString('es', { day: 'numeric', month: 'long', year: 'nu
 
 global.dfail = (type, m, conn) => {
   const msg = {
-    rowner: '*[ ℹ️ ] Este comando solo puede ser utilizado por el propietario del bot.*',
-    owner: '*[ ℹ️ ] Este comando solo puede ser utilizado por el propietario del bot.*',
-    mods: '*[ ℹ️ ] Este comando solo puede ser utilizado por moderadores y el propietario del bot.*',
-    premium: '*[ ℹ️ ] Este comando solo puede ser utilizado por usurios premium y el propietario del bot.*',
-    group: '*[ ℹ️ ] Este comando solo puede ser utilizado en grupos.*',
+    rowner: '*[ ℹ️ ] الامر ده لصاحب البوت بس.*',
+    owner: '*[ ℹ️ ] الامر ده لصاحب البوت بس.*',
+    mods: '*[ ℹ️ ] الامر ده للمشرفين وصاحب البوت بس.*',
+    premium: '*[ ℹ️ ] الامر ده للمطور والناس المميزه بس.*',
+    group: '*[ ℹ️ ] الامر ده شغال في القروبات بس.*',
     private: '*[ ℹ️ ] Este comando solo puede ser utilizado en el chat privado del bot.*',
-    admin: '*[ ℹ️ ] Este comando solo puede ser usado por administradores del grupo.*',
-    botAdmin: '*[ ℹ️ ] Para utilizar este comando es necesario que el bot sea administrador del grupo.*',
+    admin: '*[ ℹ️ ] الادمن بس الي يقدروا يستخدموا ذا الامر.*',
+    botAdmin: '*[ ℹ️ ] ارفع البوت ادمن الاول عشان تستخدم الامر.*',
     unreg: '*[ ℹ️ ] Para utilizar este comando debes estar registrado.*\n\n*[ 💡 ] Utiliza el comando:* _/verificar nombre.edad_ *para registrarte.*',
-    restrict: '*[ ℹ️ ] Este comando fue desactivado por el propietario del bot.*',
+    restrict: '*[ ℹ️ ] الامر متعطل من قبل المطور.*',
   }[type];
   const aa = {quoted: m, userJid: conn.user.jid};
   const prep = generateWAMessageFromContent(m.chat, {extendedTextMessage: {text: msg, contextInfo: {externalAdReply: {title: '*[ ⚠ ] Advertencia*', body: 'ᴛʜᴇ ᴍʏsᴛɪᴄ - ʙᴏᴛ', thumbnail: imagen1, sourceUrl: 'https://github.com/BrunoSobrino/TheMystic-Bot-MD'}}}}, aa);
