@@ -1200,7 +1200,7 @@ const messageText = `_*< USUARIO SUSPENDIDO />*_\n
             if (user.commandCount === 2) {
               const remainingTime = Math.ceil((user.lastCommandTime + 5000 - Date.now()) / 1000);
               if (remainingTime > 0) {
-                const messageText = `*[ ℹ️ ] Espera* _${remainingTime} segundos_ *antes de utilizar otro comando.*`;
+                const messageText = `*[ ℹ️ ] انتظر* _${remainingTime} segundos_ *قبل استخدام امر اخر.*`;
                 m.reply(messageText);
                 return;
               } else {
@@ -1266,11 +1266,11 @@ const messageText = `_*< USUARIO SUSPENDIDO />*_\n
           m.exp += xp;
         }
         if (!isPrems && plugin.limit && global.db.data.users[m.sender].limit < plugin.limit * 1) {
-          mconn.conn.reply(m.chat, `*[ ℹ️ ] Sus diamantes se han agotado, puede adquirir más con el comando:* _${usedPrefix}buyall_`, m);
+          mconn.conn.reply(m.chat, `*[ ℹ️ ] لقد نفذ الماسك, يمكنك شراء المزيد بواسطة الامر:* _${usedPrefix}buyall_`, m);
           continue; 
         }
         if (plugin.level > _user.level) {
-          mconn.conn.reply(m.chat, `*[ ℹ️ ] Se require tener el nivel ${plugin.level} para poder utilizar el comando. Tú nivel actual es ${_user.level}, usa el comando ${usedPrefix}lvl para subir tu nivel con XP.*`, m);
+          mconn.conn.reply(m.chat, `*[ ℹ️ ] يجب ان يكون مستواك ${plugin.level} لتتمكن من استخدام الامر. مستواك الحالي هو ${_user.level}, استخدم الامر ${usedPrefix}lvl para subir tu nivel con XP.*`, m);
           continue; 
         }
         const extra = {
@@ -1313,7 +1313,7 @@ const messageText = `_*< USUARIO SUSPENDIDO />*_\n
               /* for (const [jid] of global.reportes_solicitudes.filter(([number]) => number)) {
                 const data = (await conn.onWhatsApp(jid))[0] || {};
                 if (data.exists) {
-                  await m.reply(`*[ ⚠️ 𝚁𝙴𝙿𝙾𝚁𝚃𝙴 𝙳𝙴 𝙲𝙾𝙼𝙰𝙽𝙳𝙾 𝙲𝙾𝙽 𝙵𝙰𝙻𝙻𝙾𝚂 ⚠️ ]*\n\n*—◉ 𝙿𝙻𝚄𝙶𝙸𝙽:* ${m.plugin}\n*—◉ 𝚄𝚂𝚄𝙰𝚁𝙸𝙾:* ${m.sender}\n*—◉ 𝙲𝙾𝙼𝙰𝙽𝙳𝙾:* ${usedPrefix}${command} ${args.join(' ')}\n\n\`\`\`${text}\`\`\`\n\n*[❗] 𝚁𝙴𝙿𝙾𝚁𝚃𝙴𝙻𝙾 𝙰𝙻 𝙲𝚁𝙴𝙰𝙳𝙾𝚁 𝙳𝙴𝙻 𝙱𝙾𝚃 𝙿𝙰𝚁𝙰 𝙳𝙰𝚁𝙻𝙴 𝚄𝙽𝙰 𝚂𝙾𝙻𝚄𝙲𝙸𝙾𝙽, 𝙿𝚄𝙴𝙳𝙴 𝚄𝚂𝙰𝚁 𝙴𝙻 𝙲𝙾𝙼𝙰𝙽𝙳𝙾 #reporte*`.trim(), data.jid);
+                  await m.reply(`*[ ⚠️ يرجي الابلاغ عن الامر مع ذكر الاخطاء ⚠️ ]*\n\n*—◉ الامر:* ${m.plugin}\n*—◉ المستخدم:* ${m.sender}\n*—◉ الامر:* ${usedPrefix}${command} ${args.join(' ')}\n\n\`\`\`${text}\`\`\`\n\n*[❗] بلغ المطور عشان تلاقي حل, يمكنك استخدام هذا الامر #ابلاغ*`.trim(), data.jid);
                 }
               }*/
               const md5c = fs.readFileSync('./plugins/' + m.plugin);
@@ -1339,7 +1339,7 @@ const messageText = `_*< USUARIO SUSPENDIDO />*_\n
             }
           }
           if (m.limit) {
-            m.reply('*[ ℹ️ ] Se utilizaron ' + +m.limit + ' diamante(s) (limites).*');
+            m.reply('*[ ℹ️ ] تم استخدامها ' + +m.limit + ' diamante(s) (limites).*');
           }
         }
         break;
@@ -1451,12 +1451,12 @@ export async function participantsUpdate({id, participants, action}) {
     case 'promote':
     case 'daradmin':
     case 'darpoder':
-      text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```');
+      text = (chat.sPromote || this.spromote || conn.spromote || '@user ```اصبح مشرفا الان```');
     case 'demote':
     case 'quitarpoder':
     case 'quitaradmin':
       if (!text) {
-        text = (chat.sDemote || this.sdemote || conn.sdemote || '@user ```is no longer Admin```');
+        text = (chat.sDemote || this.sdemote || conn.sdemote || '@user ```لم يعد مشرفا لم يكن كمان توقعناه```');
       }
       text = text.replace('@user', '@' + participants[0].split('@')[0]);
       if (chat.detect && !chat?.isBanned) {
@@ -1481,10 +1481,10 @@ export async function groupsUpdate(groupsUpdate) {
     if (groupUpdate.subjectTime) continue;
     const chats = global.db.data.chats[id]; let text = '';
     if (!chats?.detect) continue;
-    if (groupUpdate.desc) text = (chats.sDesc || this.sDesc || conn.sDesc || '```Description has been changed to```\n@desc').replace('@desc', groupUpdate.desc);
-    if (groupUpdate.subject) text = (chats.sSubject || this.sSubject || conn.sSubject || '```Subject has been changed to```\n@subject').replace('@subject', groupUpdate.subject);
-    if (groupUpdate.icon) text = (chats.sIcon || this.sIcon || conn.sIcon || '```Icon has been changed to```').replace('@icon', groupUpdate.icon);
-    if (groupUpdate.revoke) text = (chats.sRevoke || this.sRevoke || conn.sRevoke || '```Group link has been changed to```\n@revoke').replace('@revoke', groupUpdate.revoke);
+    if (groupUpdate.desc) text = (chats.sDesc || this.sDesc || conn.sDesc || '```تم تغيير الوصف الي```\n@desc').replace('@desc', groupUpdate.desc);
+    if (groupUpdate.subject) text = (chats.sSubject || this.sSubject || conn.sSubject || '```تم تغيير اسم المجموعه الي```\n@subject').replace('@subject', groupUpdate.subject);
+    if (groupUpdate.icon) text = (chats.sIcon || this.sIcon || conn.sIcon || '```تم تغيير صورة المجموعه الي```').replace('@icon', groupUpdate.icon);
+    if (groupUpdate.revoke) text = (chats.sRevoke || this.sRevoke || conn.sRevoke || '```تم تغيير لينك المجموعه الي```\n@revoke').replace('@revoke', groupUpdate.revoke);
     if (!text) continue;
     await mconn.conn.sendMessage(id, {text, mentions: mconn.conn.parseMention(text)});
   }
@@ -1523,8 +1523,8 @@ let date = d.toLocaleDateString('es', { day: 'numeric', month: 'long', year: 'nu
  ▢ *Usuario:* @${participant.split`@`[0]}
  ▢ *Hora:* ${time}
  ▢ *Fecha:* ${date}\n
- ▢ *Enviando el mensaje eliminado...*\n
- *[ ℹ️ ] Para desactivar la función* _antidelete_*, envia el siguiente comando:* _/disable antidelete_`.trim();
+ ▢ *ارسال الرساله المحذوفه...*\n
+ *[ ℹ️ ] عشان تلغي امر* _antidelete_*, استخدم الامر ده:* _/disable antidelete_`.trim();
         await mconn.conn.sendMessage(msg.chat, {text: antideleteMessage, mentions: [participant]}, {quoted: msg})
         mconn.conn.copyNForward(msg.chat, msg).catch(e => console.log(e, msg))
     } catch (e) {
