@@ -33,7 +33,7 @@ function handler(m, { text }) {
 }
 handler.help = ['ＯＢＩＴＯ']
 handler.tags = ['ＯＢＩＴＯ']
-handler.command =  /^(كيب)$/i
+handler.command =  /^(زخرفة)$/i
 
 export default handler
 > `ᏫᏰᎥᎿᏫ`
