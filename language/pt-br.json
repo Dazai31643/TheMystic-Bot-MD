@@ -2005,10 +2005,10 @@
         "gc_demote": {
             "texto1": [
                 "*[❗] USO APROPRIADO*\n\n*┯┷*\n*┠≽",
-                "-> responda a uma mensagem*\n*┷┯*"
+                "-> قم بالرد علي رساله*\n*┷┯*"
             ],
-            "texto2": "*[ ⚠️ ] O número inserido está incorreto, por favor insira o número correto*",
-            "texto3": "*[ ✅ ] ORDENS RECEBIDAS*"
+            "texto2": "*[ ⚠️ ] الرقم الذي ادخلته غير صحيح يرجي ادخال رقم صالح*",
+            "texto3": "*[ ✅ ] تم اعفائه بنجاح*"
         },
         "gc_destraba": {
             "texto1": "⏰DESTRAV2.0⏰* \nli.DESTRAVip.to \n2019 🦍💨"
@@ -2090,10 +2090,10 @@
         "gc_promote": {
             "texto1": [
                 "*[❗] USO APROPRIADO*",
-                "-> responder a uma mensagem*\n*┷┯*"
+                "-> قم بالرد علي رساله*\n*┷┯*"
             ],
-            "texto2": "*[⚠️] O número inserido está incorreto, por favor insira o número correto*",
-            "texto3": "*[✅] ORDENS RECEBIDAS*"
+            "texto2": "*[⚠️] الرقم الذي ادخلته غير صالح يرجي ادخال رقم صالح*",
+            "texto3": "*[✅] تمت ترقيته*"
         },
         "gc_revoke": {
             "texto1": "🔹️ *_O link do grupo foi reativado com sucesso._*\n♾ • Novo Link:"
