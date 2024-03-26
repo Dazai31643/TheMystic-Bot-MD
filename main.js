@@ -383,8 +383,8 @@ global.reloadHandler = async function(restatConn) {
     conn.ev.off('creds.update', conn.credsUpdate);
   }
 
-  conn.welcome = '👋  اهلا بك في النقابة منور/a!\n@user';
-  conn.bye = '👋 تطلع يجي غيرك محد مهتم الا لو كنت دازاي\n@user';
+  conn.welcome = 'اهلا بك في النقابة منور 👋\n@user';
+  conn.bye = ' تطلع يجي غيرك محد مهتم الا لو كنت دازاي 👋\n@user';
   conn.spromote = '*[ ℹ️ ] @user اصبح مشرفا.*';
   conn.sdemote = '*[ ℹ️ ] @user لم يعد مشرفا.*';
   conn.sDesc = '*[ ℹ️ ]  تم تغيير وصف المجموعه.*';
@@ -544,7 +544,7 @@ setInterval(async () => {
   if (stopped === 'close' || !conn || !conn.user) return;
   const _uptime = process.uptime() * 1000;
   const uptime = clockString(_uptime);
-  const bio = `[ ⏳ ] Uptime: ${uptime}`;
+  const bio = `[ ⏳ ] Uptime 𝐷𝐴𝑍𝐴𝐼 𝐵𝛩𝑇 : ${uptime}`;
   await conn.updateProfileStatus(bio).catch((_) => _);
 }, 60000);
 function clockString(ms) {
