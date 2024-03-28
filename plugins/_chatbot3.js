@@ -2,28 +2,28 @@ let handler = m => m
  handler.all = async function (m) { 
  let chat = global.db.data.chats[m.chat] 
   
- if (/^احا$/i).test(m.text) ) { //sem prefixo 
-     conn.reply(m.chat, احتين علي احتك 🐦🥹, m) //wm, null, [['Menu', '#menu']], m) botones :V 
+ if (/^احا$/i.test(m.text) ) { //sem prefixo 
+     conn.reply(m.chat, `احتين علي احتك 🐦🥹`, m) //wm, null, [['Menu', '#menu']], m) botones :V 
   
  } 
   
  if (/^الحمدلله$/i.test(m.text) ) { //sem prefixo 
-     conn.reply(m.chat, ` ادام الله حمدك`, m) //wm, null, [['Menu', '#menu']], m) botones :V 
+     conn.reply(m.chat, `ادام الله حمدك`, m) //wm, null, [['Menu', '#menu']], m) botones :V 
   
  } 
   
  if (/^دازاي$/i.test(m.text) ) { //sem prefixo 
-     conn.reply(m.chat, ` هلا حب اخيرا حد نطق اسمي صح🥹`, m) //wm, null, [['Menu', '#menu']], m) botones :V 
+     conn.reply(m.chat, `هلا حب اخيرا حد نطق اسمي صح🥹`, m) //wm, null, [['Menu', '#menu']], m) botones :V 
   
  } 
   
  if (/^بوت$/i.test(m.text) ) { //sem prefixo 
-     conn.reply(m.chat, ` هقعد اقول لحد امتي اسمي دازاي؟🐤, `, m) //wm, null, [['Menu', '#menu']], m) botones :V 
+     conn.reply(m.chat, `هقعد اقول لحد امتي اسمي دازاي؟🐤, `, m) //wm, null, [['Menu', '#menu']], m) botones :V 
   
  } 
   
  if (/^انا جيت$/i.test(m.text) ) { //sem prefixo 
-     conn.reply(m.chat, ` منور ✨💜 `, m) //wm, null, [['Menu', '#menu']], m) botones :V 
+     conn.reply(m.chat, `منور ✨💜 `, m) //wm, null, [['Menu', '#menu']], m) botones :V 
   
  } 
   
@@ -52,27 +52,27 @@ let handler = m => m
   
   
  if (/^ملل|مللل|ملللل$/i.test(m.text) ) { //sem prefixo 
-     conn.reply(m.chat, ` عارفين ف اسكت `, m) //wm, null, [['Menu', '#menu']], m) botones :V 
+     conn.reply(m.chat, `عارفين ف اسكت`, m) //wm, null, [['Menu', '#menu']], m) botones :V 
   
  } 
   
  if (/^السلام عليكم$/i.test(m.text) ) { //sem prefixo 
-     conn.reply(m.chat, ` وعليكم السلام `, m) //wm, null, [['Menu', '#menu']], m) botones :V 
+     conn.reply(m.chat, `وعليكم السلام `, m) //wm, null, [['Menu', '#menu']], m) botones :V 
   
  } 
   
  if (/^تصبح علي خير|تصبحوا علي خير/i.test(m.text) ) { //sem prefixo 
-     conn.reply(m.chat, ` وانت من اهل الخير حبيبي✨💜 `, m) //wm, null, [['Menu', '#menu']], m) botones :V 
+     conn.reply(m.chat, `وانت من اهل الخير حبيبي✨💜`, m) //wm, null, [['Menu', '#menu']], m) botones :V 
   
  }  
   
  if (/^احبك$/i.test(m.text) ) { //sem prefixo 
- conn.reply(m.chat, ` انا اكتر ✨🥹💜 `, m) //wm, null, [['Menu', '#menu']], m) botones :V 
+ conn.reply(m.chat, `انا اكتر ✨🥹💜 `, m) //wm, null, [['Menu', '#menu']], m) botones :V 
   
  } 
      
  if (/^🐦$/i.test(m.text) ) { //sem prefixo 
-     conn.reply(m.chat, ` بص بعيد `, m) //wm, null, [['Menu', '#menu']], m) botones :V 
+     conn.reply(m.chat, `بص بعيد`, m) //wm, null, [['Menu', '#menu']], m) botones :V 
   
  } 
   
@@ -87,7 +87,7 @@ let handler = m => m
  } 
   
  if (/^كيفك|عامل ايه$/i.test(m.text) ) { //sem prefixo 
-     conn.reply(m.chat, ` الحمد لله و انت`, m) //wm, null, [['Menu', '#menu']], m) botones :V 
+     conn.reply(m.chat, `الحمد لله و انت`, m) //wm, null, [['Menu', '#menu']], m) botones :V 
   
  } 
  return !0 }
