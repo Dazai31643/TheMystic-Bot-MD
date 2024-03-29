@@ -101,9 +101,14 @@ let handler = m => m;
      ];
             }else if (/^مرحبا$/i.test(m.text)) { 
      responses = [ 
-       '*مرحبا🧸*',  
+     '*مرحبا🧸*',  
      ];
-   }
+   
+   }else if (/^مين عمك$/i.test(m.text)) { 
+     responses = [ 
+       '*كريستيانو 🇵🇹🐐*',  
+     ];
+      }
    if (responses) { 
      let randomIndex = Math.floor(Math.random() * responses.length); 
      conn.reply(m.chat, responses[randomIndex], m); 
