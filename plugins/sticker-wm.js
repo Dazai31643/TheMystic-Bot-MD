@@ -6,25 +6,25 @@ const tradutor = _translate.plugins.sticker_wm
 // To set the language, in the root of the project, modify the config.json file.
 
 const handler = async (m, {conn, text}) => {
-  if (!m.quoted) throw tradutor.texto1;
+  if (!m.quoted) throw tradutor.امثل;
   let stiker = false;
   try {
     let [packname, ...author] = text.split('|');
     author = (author || []).join('|');
     const mime = m.quoted.mimetype || '';
-    if (!/webp/.test(mime)) throw tradutor.texto2;
+    if (!/webp/.test(mime)) throw tradutor.تمام;
     const img = await m.quoted.download();
-    if (!img) throw tradutor.texto3;
+    if (!img) throw tradutor.مثال;
     stiker = await addExif(img, packname || global.packname, author || global.author);
   } catch (e) {
     console.error(e);
     if (Buffer.isBuffer(e)) stiker = e;
   } finally {
     if (stiker) conn.sendFile(m.chat, stiker, 'wm.webp', '', m, false, {asSticker: true});
-    else throw tradutor.texto3;
+    else throw tradutor.مثال;
   }
 };
 handler.help = ['wm <packname>|<author>'];
 handler.tags = ['sticker'];
-handler.command = /^take|robar|wm$/i;
+handler.command = /^حقوق|سرقه|سرقة$/i;
 export default handler;
