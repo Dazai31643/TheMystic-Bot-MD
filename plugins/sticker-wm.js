@@ -6,22 +6,22 @@ const tradutor = _translate.plugins.sticker_wm
 // To set the language, in the root of the project, modify the config.json file.
 
 const handler = async (m, {conn, text}) => {
-  if (!m.quoted) throw tradutor.امثل;
+  if (!m.quoted) throw tradutor.texto2;
   let stiker = false;
   try {
     let [packname, ...author] = text.split('|');
     author = (author || []).join('|');
     const mime = m.quoted.mimetype || '';
-    if (!/webp/.test(mime)) throw tradutor.تمام;
+    if (!/webp/.test(mime)) throw tradutor.texto1;
     const img = await m.quoted.download();
-    if (!img) throw tradutor.مثال;
+    if (!img) throw tradutor.texto3;
     stiker = await addExif(img, packname || global.packname, author || global.author);
   } catch (e) {
     console.error(e);
     if (Buffer.isBuffer(e)) stiker = e;
   } finally {
     if (stiker) conn.sendFile(m.chat, stiker, 'wm.webp', '', m, false, {asSticker: true});
-    else throw tradutor.مثال;
+    else throw tradutor.texto3;
   }
 };
 handler.help = ['wm <packname>|<author>'];
