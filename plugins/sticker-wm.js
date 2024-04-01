@@ -6,22 +6,22 @@ const tradutor = _translate.plugins.sticker_wm
 // To set the language, in the root of the project, modify the config.json file.
 
 const handler = async (m, {conn, text}) => {
-  if (!m.quoted) throw tradutor.texto2;
+  if (!m.quoted) throw '*اعمل ريب علي الملصق الي عاوز تسرقه*'
   let stiker = false;
   try {
     let [packname, ...author] = text.split('|');
     author = (author || []).join('|');
     const mime = m.quoted.mimetype || '';
-    if (!/webp/.test(mime)) throw tradutor.texto1;
+    if (!/webp/.test(mime)) throw '*اعمل ريب علي الملصق الي عاوز تسرقه*';
     const img = await m.quoted.download();
-    if (!img) throw tradutor.texto3;
+    if (!img) throw '*اعمل ريب علي الملصق الي عاوز تسرقه*'
     stiker = await addExif(img, packname || global.packname, author || global.author);
   } catch (e) {
     console.error(e);
     if (Buffer.isBuffer(e)) stiker = e;
   } finally {
     if (stiker) conn.sendFile(m.chat, stiker, 'wm.webp', '', m, false, {asSticker: true});
-    else throw tradutor.texto3;
+    else throw '*حدث خطأ يرجي اعادة المحاوله لاحقا..*'
   }
 };
 handler.help = ['wm <packname>|<author>'];
