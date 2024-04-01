@@ -39,7 +39,7 @@ if (!stiker) stiker = e
 } finally {
 if (stiker) conn.sendFile(m.chat, stiker, 'sticker.webp', '', m)
 
-else throw '*خطأ ، يرجى المحاولة مرة أخرى. لا تنسي الرد على مقطع فيديو أو صورة أو إدراج رابط إنهاء الصورة.jpg‏ الذي سيتم تحويله الي ملصق*'
+else throw '*عذرا قم بالرد علي الصوره او الفيديو الذي تريد تحويله لملصق ✍️*'
 
 }}
 handler.help = ['stiker (caption|reply media)', 'stiker <url>', 'stikergif (caption|reply media)', 'stikergif <url>']
