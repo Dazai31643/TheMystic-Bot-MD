@@ -5,7 +5,7 @@ throw false
 }//غير دازاي
 let pesan = args.join` `
 let oi = `*الرساله:* ${pesan}`
-let teks = `*  * \n\n ${oi}\n\n*🌀┇الجروب :⇣*\n`
+let teks = `*  * \n\n ${oi}\n\n*🌀┇االاعضاء :⇣*\n`
 for (let mem of participants) {
 teks += `*تفاعل ↫* @${mem.id.split('@')[0]}\n`}
 teks += `*𝐷𝐴𝑍𝐴𝐼-𝐵𝛩𝑇*\n\n*𝐷𝐴𝑍𝐴𝐼*`
