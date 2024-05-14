@@ -6,7 +6,7 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
     args[0] = m.quoted.text
   }
   if (!args[0] && !m.quoted) throw `هات رابط الفيديو الي عاوز تحمله 🤨`
-  if (!args[0].match(/تيك/gi)) throw `اتأكد من الرابط يا عسل 😉`
+  if (!args[0].match(/tiktok/gi)) throw `اتأكد من الرابط يا عسل 😉`
 
   let txt = 'اتفضل الفيديو بتاعك يعم ❤'
 
@@ -37,6 +37,6 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
 
 handler.help = ['tiktok'].map(v => v + ' <url>')
 handler.tags = ['downloader']
-handler.command = /^t(تيك(d(own(load(er)?)?|l))?|td(own(load(er)?)?|l))$/i
+handler.command = /^t(t|iktok(d(own(load(er)?)?|l))?|td(own(load(er)?)?|l))$/i
 
 export default handler
