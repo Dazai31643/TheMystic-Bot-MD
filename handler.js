@@ -1546,7 +1546,7 @@ global.dfail = (type, m, conn) => {
     restrict: '*[ ℹ️ ] الامر متعطل من قبل المطور.*',
   }[type];
   const aa = {quoted: m, userJid: conn.user.jid};
-  const prep = generateWAMessageFromContent(m.chat, {extendedTextMessage: {text: msg, contextInfo: {externalAdReply: {title: '*قروب الدعم [⚠️]*', body: '𝐷𝐴𝑍𝐴𝐼-𝐵𝛩𝑇', thumbnail: imagen1, sourceUrl: 'https://chat.whatsapp.com/D2osSx3Wjm83aPoQebFUKC'}}}}, aa);
+  const prep = generateWAMessageFromContent(m.chat, {extendedTextMessage: {text: msg, contextInfo: {externalAdReply: {title: 'قروب الدعم [ ⚠️ ]', body: '𝐷𝐴𝑍𝐴𝐼-𝐵𝛩𝑇', thumbnail: imagen1, sourceUrl: 'https://chat.whatsapp.com/D2osSx3Wjm83aPoQebFUKC'}}}}, aa);
   if (msg) return conn.relayMessage(m.chat, prep.message, {messageId: prep.key.id});
 };
 
